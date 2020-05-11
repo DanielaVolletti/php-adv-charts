@@ -1,14 +1,17 @@
+// funzione per stampare grafico con linea
 function printLineGrafic() {
+  // variabile mesi con moments.js
+  var mesi= moment.months();
+  // chiamata ajax a server.php per stampa del grafico
   $.ajax({
     url: 'server.php',
     method: 'GET',
     success: function (result){
-      console.log(result);
       var ctx = $('#line');
       var myChart = new Chart(ctx, {
           type: 'line',
           data: {
-              labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+              labels: mesi,
               datasets: [{
                   label: 'Vendite',
                   data: result,
@@ -60,7 +63,6 @@ function printLineGrafic() {
 }
 
 function init() {
-  console.log('ciao mondo');
   printLineGrafic();
 }
 
