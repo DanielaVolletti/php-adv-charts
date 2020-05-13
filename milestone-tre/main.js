@@ -15,61 +15,58 @@ function printLineGrafic() {
     url: 'getSalesByMonths.php',
     method: 'GET',
     data: {
-      level: 'guest'
+      level: level
     },
     success: function (result){
-      // if(level === result.access){
       var ctx = $('#line');
       var myChart = new Chart(ctx, {
-          type: result.type,
-          data: {
-              labels: mesi,
-              datasets: [{
-                  label: 'Vendite',
-                  data: result.data,
-                  backgroundColor: [
-                      'rgba(150, 33, 146, 1)',
-                      'rgba(82, 40, 204, 1)',
-                      'rgba(4, 51, 255, 1)',
-                      'rgba(0, 146, 146, 1)',
-                      'rgba(0, 249, 0, 1)',
-                      'rgba(202, 250, 0, 1)',
-                      'rgba(255, 251, 0, 1)',
-                      'rgba(255, 199, 0, 1)',
-                      'rgba(255, 147, 0, 1)',
-                      'rgba(255, 80, 0, 1)',
-                      'rgba(255, 38, 0, 1)',
-                      'rgba(216, 34, 83, 1)'
-                  ],
-                  borderColor: [
-                      'rgba(150, 33, 146, 1)',
-                      'rgba(82, 40, 204, 1)',
-                      'rgba(4, 51, 255, 1)',
-                      'rgba(0, 146, 146, 1)',
-                      'rgba(0, 249, 0, 1)',
-                      'rgba(202, 250, 0, 1)',
-                      'rgba(255, 251, 0, 1)',
-                      'rgba(255, 199, 0, 1)',
-                      'rgba(255, 147, 0, 1)',
-                      'rgba(255, 80, 0, 1)',
-                      'rgba(255, 38, 0, 1)',
-                      'rgba(216, 34, 83, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
+        type: result.type,
+        data: {
+            labels: mesi,
+            datasets: [{
+                label: 'Vendite',
+                data: result.data,
+                backgroundColor: [
+                    'rgba(150, 33, 146, 1)',
+                    'rgba(82, 40, 204, 1)',
+                    'rgba(4, 51, 255, 1)',
+                    'rgba(0, 146, 146, 1)',
+                    'rgba(0, 249, 0, 1)',
+                    'rgba(202, 250, 0, 1)',
+                    'rgba(255, 251, 0, 1)',
+                    'rgba(255, 199, 0, 1)',
+                    'rgba(255, 147, 0, 1)',
+                    'rgba(255, 80, 0, 1)',
+                    'rgba(255, 38, 0, 1)',
+                    'rgba(216, 34, 83, 1)'
+                ],
+                borderColor: [
+                    'rgba(150, 33, 146, 1)',
+                    'rgba(82, 40, 204, 1)',
+                    'rgba(4, 51, 255, 1)',
+                    'rgba(0, 146, 146, 1)',
+                    'rgba(0, 249, 0, 1)',
+                    'rgba(202, 250, 0, 1)',
+                    'rgba(255, 251, 0, 1)',
+                    'rgba(255, 199, 0, 1)',
+                    'rgba(255, 147, 0, 1)',
+                    'rgba(255, 80, 0, 1)',
+                    'rgba(255, 38, 0, 1)',
+                    'rgba(216, 34, 83, 1)'
+                ],
+                borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
             }
-        });
-
-      // }
+          }
+      });
 
     }, error: function (error){
       console.log(error);
@@ -85,44 +82,43 @@ function printPieGrafic() {
     url: 'getSalesByPerson.php',
     method: 'GET',
     data: {
-      level: 'employee'
+      level: level
     },
     success: function (result){
-      // if(level == result.access){
-        var ctx = $('#pie');
-        var myChart = new Chart(ctx, {
-            type: result.type,
-            data: {
-                labels: result.person,
-                datasets: [{
-                    label: 'Vendite',
-                    data: result.sales,
-                    backgroundColor: [
-                        'rgba(150, 33, 146, 1)',
-                        'rgba(82, 40, 204, 1)',
-                        'rgba(4, 51, 255, 1)',
-                        'rgba(0, 146, 146, 1)'
-                    ],
-                    borderColor: [
-                        'rgba(150, 33, 146, 1)',
-                        'rgba(82, 40, 204, 1)',
-                        'rgba(4, 51, 255, 1)',
-                        'rgba(0, 146, 146, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-      // }
+
+      var ctx = $('#pie');
+      var myChart = new Chart(ctx, {
+          type: result.type,
+          data: {
+              labels: result.person,
+              datasets: [{
+                  label: 'Vendite',
+                  data: result.sales,
+                  backgroundColor: [
+                      'rgba(150, 33, 146, 1)',
+                      'rgba(82, 40, 204, 1)',
+                      'rgba(4, 51, 255, 1)',
+                      'rgba(0, 146, 146, 1)'
+                  ],
+                  borderColor: [
+                      'rgba(150, 33, 146, 1)',
+                      'rgba(82, 40, 204, 1)',
+                      'rgba(4, 51, 255, 1)',
+                      'rgba(0, 146, 146, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
+      });
 
     }, error: function (error){
       console.log(error);
@@ -139,52 +135,50 @@ function printThreeLineGrafic() {
     url: 'getThreeGrafic.php',
     method: 'GET',
     data: {
-      level: 'clevel'
+      level: level
     },
     success: function (result){
-      // if(level == result.access){
-        var ctx = $('#trend');
-        var myChart = new Chart(ctx, {
-            type: result.type,
-            data: {
-                labels: mesi,
-                datasets: [{
-                    label: result['team'][0],
-                    data: result['trend'][0],
-                    borderColor: [
-                        'rgba(150, 33, 146, 1)',
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: result['team'][1],
-                    data: result['trend'][1],
-                    borderColor: [
-                        'rgba(0, 146, 146, 1)',
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: result['team'][2],
-                    data: result['trend'][2],
-                    borderColor: [
-                        'rgba(4, 51, 255, 1)',
-                    ],
-                    borderWidth: 1
-                }
-              ]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-      // }
+      var ctx = $('#trend');
+      var myChart = new Chart(ctx, {
+          type: result.type,
+          data: {
+              labels: mesi,
+              datasets: [{
+                  label: result['team'][0],
+                  data: result['trend'][0],
+                  borderColor: [
+                      'rgba(150, 33, 146, 1)',
+                  ],
+                  borderWidth: 1
+              },
+              {
+                  label: result['team'][1],
+                  data: result['trend'][1],
+                  borderColor: [
+                      'rgba(0, 146, 146, 1)',
+                  ],
+                  borderWidth: 1
+              },
+              {
+                  label: result['team'][2],
+                  data: result['trend'][2],
+                  borderColor: [
+                      'rgba(4, 51, 255, 1)',
+                  ],
+                  borderWidth: 1
+              }
+            ]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
+      });
 
     }, error: function (error){
       console.log(error);

@@ -18,6 +18,11 @@
     'access' => $grafPie['access']
   ];
 
+  $level = $_GET['level'];
 
-  echo json_encode($res);
- ?>
+  if($level === 'employee' || 'clevel'){
+    echo json_encode($res);
+  }
+
+
+?>

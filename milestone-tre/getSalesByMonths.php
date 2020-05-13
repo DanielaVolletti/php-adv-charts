@@ -5,8 +5,10 @@
 
   $grafLine = $graphs['fatturato'];
 
-  echo json_encode($grafLine);
+  $level = $_GET['level'];
 
+  if($level === 'guest' || 'employee' || 'clevel'){
+    echo json_encode($grafLine);
+  }
 
-
- ?>
+?>

@@ -18,6 +18,10 @@
     'access' => $threeGraf['access']
   ];
 
-  echo json_encode($res);
+  $level = $_GET['level'];
+
+  if($level === 'clevel'){
+    echo json_encode($res);
+  }
 
 ?>
