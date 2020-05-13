@@ -6,4 +6,7 @@
   $grafLine = $graphs['fatturato'];
 
   echo json_encode($grafLine);
+
+
+
  ?>

@@ -14,7 +14,8 @@
   $res = [
     'type' => $grafPie['type'],
     'person' => $person,
-    'sales' => $sales
+    'sales' => $sales,
+    'access' => $grafPie['access']
   ];
 
 

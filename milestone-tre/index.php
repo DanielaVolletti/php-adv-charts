@@ -8,8 +8,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/locale/it.min.js" charset="utf-8"></script>
     <script src="main.js" charset="utf-8"></script>
     <title>ChartJs</title>
+
   </head>
   <body>
+
+    <input id="level" type="hidden" value = "<?php echo $_GET['level']; ?>">
+
     <div class="container">
       <div class="primo-grafico">
         <canvas id="line"></canvas>

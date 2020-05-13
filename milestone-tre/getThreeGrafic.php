@@ -14,7 +14,8 @@
   $res = [
     'type' => $threeGraf['type'],
     'team' => $team,
-    'trend' => $trend
+    'trend' => $trend,
+    'access' => $threeGraf['access']
   ];
 
   echo json_encode($res);
