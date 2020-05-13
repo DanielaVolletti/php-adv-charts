@@ -20,7 +20,7 @@
 
   $level = $_GET['level'];
 
-  if($level === 'employee' || 'clevel'){
+  if($level === 'employee' || $level === 'clevel'){
     echo json_encode($res);
   }
 

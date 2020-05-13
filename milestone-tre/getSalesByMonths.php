@@ -7,7 +7,7 @@
 
   $level = $_GET['level'];
 
-  if($level === 'guest' || 'employee' || 'clevel'){
+  if($level === 'guest' || $level === 'employee' || $level === 'clevel'){
     echo json_encode($grafLine);
   }
 
