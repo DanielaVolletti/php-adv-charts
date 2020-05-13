@@ -14,59 +14,62 @@ function printLineGrafic() {
   $.ajax({
     url: 'getSalesByMonths.php',
     method: 'GET',
+    data: {
+      level: 'guest'
+    },
     success: function (result){
-      if(level === result.access){
-        var ctx = $('#line');
-        var myChart = new Chart(ctx, {
-            type: result.type,
-            data: {
-                labels: mesi,
-                datasets: [{
-                    label: 'Vendite',
-                    data: result.data,
-                    backgroundColor: [
-                        'rgba(150, 33, 146, 1)',
-                        'rgba(82, 40, 204, 1)',
-                        'rgba(4, 51, 255, 1)',
-                        'rgba(0, 146, 146, 1)',
-                        'rgba(0, 249, 0, 1)',
-                        'rgba(202, 250, 0, 1)',
-                        'rgba(255, 251, 0, 1)',
-                        'rgba(255, 199, 0, 1)',
-                        'rgba(255, 147, 0, 1)',
-                        'rgba(255, 80, 0, 1)',
-                        'rgba(255, 38, 0, 1)',
-                        'rgba(216, 34, 83, 1)'
-                    ],
-                    borderColor: [
-                        'rgba(150, 33, 146, 1)',
-                        'rgba(82, 40, 204, 1)',
-                        'rgba(4, 51, 255, 1)',
-                        'rgba(0, 146, 146, 1)',
-                        'rgba(0, 249, 0, 1)',
-                        'rgba(202, 250, 0, 1)',
-                        'rgba(255, 251, 0, 1)',
-                        'rgba(255, 199, 0, 1)',
-                        'rgba(255, 147, 0, 1)',
-                        'rgba(255, 80, 0, 1)',
-                        'rgba(255, 38, 0, 1)',
-                        'rgba(216, 34, 83, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-              },
-              options: {
-                  scales: {
-                      yAxes: [{
-                          ticks: {
-                              beginAtZero: true
-                          }
-                      }]
-                  }
-              }
-          });
+      // if(level === result.access){
+      var ctx = $('#line');
+      var myChart = new Chart(ctx, {
+          type: result.type,
+          data: {
+              labels: mesi,
+              datasets: [{
+                  label: 'Vendite',
+                  data: result.data,
+                  backgroundColor: [
+                      'rgba(150, 33, 146, 1)',
+                      'rgba(82, 40, 204, 1)',
+                      'rgba(4, 51, 255, 1)',
+                      'rgba(0, 146, 146, 1)',
+                      'rgba(0, 249, 0, 1)',
+                      'rgba(202, 250, 0, 1)',
+                      'rgba(255, 251, 0, 1)',
+                      'rgba(255, 199, 0, 1)',
+                      'rgba(255, 147, 0, 1)',
+                      'rgba(255, 80, 0, 1)',
+                      'rgba(255, 38, 0, 1)',
+                      'rgba(216, 34, 83, 1)'
+                  ],
+                  borderColor: [
+                      'rgba(150, 33, 146, 1)',
+                      'rgba(82, 40, 204, 1)',
+                      'rgba(4, 51, 255, 1)',
+                      'rgba(0, 146, 146, 1)',
+                      'rgba(0, 249, 0, 1)',
+                      'rgba(202, 250, 0, 1)',
+                      'rgba(255, 251, 0, 1)',
+                      'rgba(255, 199, 0, 1)',
+                      'rgba(255, 147, 0, 1)',
+                      'rgba(255, 80, 0, 1)',
+                      'rgba(255, 38, 0, 1)',
+                      'rgba(216, 34, 83, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
 
-      }
+      // }
 
     }, error: function (error){
       console.log(error);
@@ -81,8 +84,11 @@ function printPieGrafic() {
   $.ajax({
     url: 'getSalesByPerson.php',
     method: 'GET',
+    data: {
+      level: 'employee'
+    },
     success: function (result){
-      if(level == result.access){
+      // if(level == result.access){
         var ctx = $('#pie');
         var myChart = new Chart(ctx, {
             type: result.type,
@@ -116,7 +122,7 @@ function printPieGrafic() {
                 }
             }
         });
-      }
+      // }
 
     }, error: function (error){
       console.log(error);
@@ -132,8 +138,11 @@ function printThreeLineGrafic() {
   $.ajax({
     url: 'getThreeGrafic.php',
     method: 'GET',
+    data: {
+      level: 'clevel'
+    },
     success: function (result){
-      if(level == result.access){
+      // if(level == result.access){
         var ctx = $('#trend');
         var myChart = new Chart(ctx, {
             type: result.type,
@@ -175,7 +184,7 @@ function printThreeLineGrafic() {
                 }
             }
         });
-      }
+      // }
 
     }, error: function (error){
       console.log(error);
