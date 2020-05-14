@@ -14,8 +14,7 @@
   $res = [
     'type' => $grafPie['type'],
     'person' => $person,
-    'sales' => $sales,
-    'access' => $grafPie['access']
+    'sales' => $sales
   ];
 
   $level = $_GET['level'];

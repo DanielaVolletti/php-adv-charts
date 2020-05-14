@@ -6,11 +6,9 @@ function getMonths(){
 var mesi = getMonths();
 
 // funzione per stampare grafico con linea
-function printLineGrafic() {
-  // chiamata ajax per stampa del grafico
-
+function printLineGrafic() {  
   var level = $("#level").val();
-
+  // chiamata ajax per stampa del grafico
   $.ajax({
     url: 'getSalesByMonths.php',
     method: 'GET',
@@ -85,7 +83,6 @@ function printPieGrafic() {
       level: level
     },
     success: function (result){
-
       var ctx = $('#pie');
       var myChart = new Chart(ctx, {
           type: result.type,
@@ -191,7 +188,7 @@ function init() {
   printLineGrafic();
   // stampa grafico pie
   printPieGrafic();
-
+  // stampa terzo grafico
   printThreeLineGrafic();
 }
 

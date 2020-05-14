@@ -8,20 +8,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/locale/it.min.js" charset="utf-8"></script>
     <script src="main.js" charset="utf-8"></script>
     <title>ChartJs</title>
-
   </head>
   <body>
-
+    <!-- input per salvare valore level url -->
     <input id="level" type="hidden" value = "<?php echo $_GET['level']; ?>">
-
+    <!-- container dei tre grafici -->
     <div class="container">
-      <div class="primo-grafico">
+      <div class="fatturato">
         <canvas id="line"></canvas>
       </div>
-      <div class="secondo-grafico">
+      <div class="fatturato-by-agent">
         <canvas id="pie"></canvas>
       </div>
-      <div class="terzo-grafico">
+      <div class="team-efficiency">
         <canvas id="trend"></canvas>
       </div>
     </div>

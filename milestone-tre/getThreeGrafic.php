@@ -14,8 +14,7 @@
   $res = [
     'type' => $threeGraf['type'],
     'team' => $team,
-    'trend' => $trend,
-    'access' => $threeGraf['access']
+    'trend' => $trend
   ];
 
   $level = $_GET['level'];
